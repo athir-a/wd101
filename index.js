@@ -1,3 +1,22 @@
+window.addEventListener("DOMContentLoaded", function () {
+  const dob = document.getElementById("dob");
+
+  // Get today's date *in your local timezone*, not UTC
+  const today = new Date();
+  const localYear = today.getFullYear();
+  const localMonth = today.getMonth();
+  const localDate = today.getDate();
+
+  const minDate = new Date(localYear - 55, localMonth, localDate);
+  const maxDate = new Date(localYear - 18, localMonth, localDate);
+
+  // Correct for time zone offset by setting hours to noon (avoids date shift bugs)
+  minDate.setHours(12);
+  maxDate.setHours(12);
+
+  dob.min = minDate.toISOString().split("T")[0];
+  dob.max = maxDate.toISOString().split("T")[0];
+});
 
 let form = document.getElementById("data");
 let retrieve = () => {
