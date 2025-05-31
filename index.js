@@ -16,7 +16,7 @@ let display = () => {
             <th>Name</th>
             <th>Email</th>
             <th>Password</th>
-            <th>Date Of Birth</th>
+            <th>Dob</th>
             <th>Accepted Terms?</th>
           </tr>
         </thead>` +
