@@ -1,20 +1,3 @@
-window.addEventListener("DOMContentLoaded", function () {
-  const dob = document.getElementById("dob");
-
-  const today = new Date();
-  const minDate = new Date(
-    today.getFullYear() - 55,
-    today.getMonth(),
-    today.getDate()
-  );
-  const maxDate = new Date(
-    today.getFullYear() - 18,
-    today.getMonth(),
-    today.getDate()
-  );
-  dob.min = minDate.toISOString().split("T")[0];
-  dob.max = maxDate.toISOString().split("T")[0];
-});
 let form = document.getElementById("data");
 let retrieve = () => {
   let entry = localStorage.getItem("entries");
