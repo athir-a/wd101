@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #0f0f38;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .form-container {
+        background-color: #1a1a4b;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h2 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        color: #e0e3ff;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"] {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #9da7f1;
+        color: #0f0f38;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 0.5rem;
+      }
+
+      .submit-button {
+        background-color: #2a3fe1;
+        color: white;
+        border: none;
+        padding: 0.75rem;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .submit-button:hover {
+        background-color: #2234c1;
+      }
+
+      .entries {
+        margin-top: 2rem;
+        background-color: #1a1a4b;
+        padding: 1rem;
+        border-radius: 10px;
+        color: #fff;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #7482ec;
+      }
+
+      th {
+        background-color: #2a3fe1;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <form id="data">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="dob">Date of Birth</label>
+        <input
+          type="date"
+          id="dob"
+          name="dob"
+          required
+          min="1964-11-09"
+          max="2004-11-09"
+        />
+
+        <label>
+          <input type="checkbox" id="terms" name="terms" required />
+          Accept Terms & Conditions
+        </label>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+
+    <div class="entries">
+      <h2>Entries</h2>
+      <table id="table"></table>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
