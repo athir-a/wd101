@@ -1,31 +1,3 @@
-window.addEventListener("DOMContentLoaded", function () {
-  const dob = document.getElementById("dob");
-
-  const today = new Date();
-
-  const formatDate = (date) => {
-    const yyyy = date.getFullYear();
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const dd = String(date.getDate()).padStart(2, "0");
-    return `${yyyy}-${mm}-${dd}`;
-  };
-
-  const minDate = new Date(
-    today.getFullYear() - 55,
-    today.getMonth(),
-    today.getDate()
-  );
-
-  const maxDate = new Date(
-    today.getFullYear() - 18,
-    today.getMonth(),
-    today.getDate()
-  );
-
-  dob.min = formatDate(minDate);
-  dob.max = formatDate(maxDate);
-});
-
 
 let form = document.getElementById("data");
 let retrieve = () => {
