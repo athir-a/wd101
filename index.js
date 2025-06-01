@@ -1,3 +1,30 @@
+window.addEventListener("DOMContentLoaded", function () {
+  const dob = document.getElementById("dob");
+
+  const today = new Date();
+
+  const formatDate = (date) => {
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  };
+
+  const minDate = new Date(
+    today.getFullYear() - 55,
+    today.getMonth(),
+    today.getDate()
+  );
+
+  const maxDate = new Date(
+    today.getFullYear() - 18,
+    today.getMonth(),
+    today.getDate()
+  );
+
+  dob.min = formatDate(minDate);
+  dob.max = formatDate(maxDate);
+});
 
 let form = document.getElementById("data");
 let retrieve = () => {
@@ -37,18 +64,6 @@ let display = () => {
 
 let save = (event) => {
   event.preventDefault();
-  let dobValue = new Date(document.getElementById("dob").value);
-  let today = new Date();
-  let age = today.getFullYear() - dobValue.getFullYear();
-  let monthDiff = today.getMonth() - dobValue.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobValue.getDate())) {
-    age--;
-  }
-
-  if (age < 18 || age > 55) {
-    alert("Sorry, you must be between 18 and 55 years old to register.");
-    return;
-  }
   let entry = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
