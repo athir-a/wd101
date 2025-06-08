@@ -11,9 +11,9 @@ window.addEventListener("DOMContentLoaded", function () {
   };
 
   const minDate = new Date(
-    today.getFullYear() - 55,
+    today.getFullYear() - 56,
     today.getMonth(),
-    today.getDate()
+    today.getDate()+1
   );
 
   const maxDate = new Date(
